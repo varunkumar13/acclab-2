@@ -1,6 +1,6 @@
 import React from "react";
 import Demo2 from "./Demo2";
-
+// drilling
 const Demo = (props) => {
     return <div>
     <Demo2 para2={props.para}/>
