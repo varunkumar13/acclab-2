@@ -6,7 +6,8 @@ import MissedGoal from "./MissedGoal";
 const Demo = (props) => {
 //const bool = false;
 const x=10;
-const cars = [ "Ford","bmw","benz","audi","skoda","sora","nano"]
+const cars = [ "Ford","bmw","benz","audi","skoda","sora","nano"];
+const passwordRegex= /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 //if (bool) {
    // return <MadeGoal />;
 //}
@@ -15,11 +16,38 @@ const cars = [ "Ford","bmw","benz","audi","skoda","sora","nano"]
     const handleClick =(x,y) => {
         alert(x+y)
     };
+
+    const handleNameChange = (event) => {
+        console.log(event.target.value);
+    }
+    const handlepasswordChange = (event) => {
+        if(passwordRegex.test(event.target.value)){
+            console.log("password matched");
+        } else {
+            console.log("password  not matched");
+        }
+        
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+    };
+
+
     return <div>
     
      Demo component
     <h1> {props.para}</h1>
+    <form onSubmit ={handleSubmit}>
+        <label>name :</label>
+        <input type="text" name="name" onChange={handleNameChange} /><br/>
+        <label> password :</label>
+        <input type="password" name="password" onChange={handlepasswordChange}/>
+        <br/>
+        <input type="submit" value="submit" />
 
+    </form>
     <ol>
         {cars.map ((car,i)=> (
             <li key={i}>{car}</li>
