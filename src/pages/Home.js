@@ -1,31 +1,29 @@
-import React ,{useState,useEffect} from "react" ;
-
-import React from "react";
+import React, { useState } from "react";
 import NavigationBar from "../components/NavigationBar";
-import "./Style.css";
-import Classes from "./Style.module.css";
+import "./Style.css"
+import classes from "./Style.module.css";
 
-const Home =() => {
-    const [isDate ,setIsdate]= useState("Hello");
-    const myStyle = {color :" #da70d6",
-    backgroundColor :"#9d44f0",
-    textAlign:"center",
-};
- consthandleChange = () => {
-    setIsDate("World")
- }
-    return (
+const Home = () => {
+    const [isData, setIsData]= useState("hello")
+    const myStyle={
+        color:"red",
+        backgroundColor:"blue",
+        textAlign:"center",
+    };
+    const handleChange=()=>{
+        setIsData("World");
+    }
+    return(
         <div>
-            <h1>{isDate}</h1>
-            <button onClick ={handleChange}>change</button>
+            <h1>{isData}</h1>
+            <button onClick={handleChange}>chage</button>
             <NavigationBar />
-            <h1 style={{color : "white",backgroundColor : "black"}}> Home page  component</h1>
-            <h3 style={myStyle}>style using object</h3>
-            <h3 className="demo">External css</h3>
-            <h3 className={Classes.body}>Css module</h3>
-            <h3 className={`${Classes.body} demo`}>add more elements</h3>
-
+            <h1 style={{color: "white", backgroundColor: "black"}}>Home page Component</h1>
+            <h1 style={myStyle}>jbcsai</h1>
+            <h3 className="demo">pogo</h3>
+            <h4 className={classes.body}>yo</h4>
+            <h5 className={`${classes.body} demo`}> add more classes</h5>
         </div>
     );
 };
- export default Home ;
+export default Home;
